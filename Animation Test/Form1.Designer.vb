@@ -25,6 +25,8 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -58,11 +60,29 @@ Partial Class Form1
         Me.PictureBox1.TabStop = False
         Me.PictureBox1.Visible = False
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(460, 201)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(96, 20)
+        Me.TextBox1.TabIndex = 3
+        Me.TextBox1.Text = "200"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(460, 239)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(96, 20)
+        Me.TextBox2.TabIndex = 4
+        Me.TextBox2.Text = "350"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(740, 354)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox1)
@@ -71,10 +91,13 @@ Partial Class Form1
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
 End Class

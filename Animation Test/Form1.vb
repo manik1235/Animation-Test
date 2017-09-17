@@ -24,7 +24,29 @@
         'BeginContainerVoid(e)
         'FillPieRectangle(e)
 
-        DrawBezierPoint(e)
+        'DrawBezierPoint(e)
+
+
+
+        DrawSomeLines(e)
+
+
+        '    e.Graphics.Using redPen As New Pen(Color.Red), _
+        'formGraphics As Graphics = Me.CreateGraphics()
+        'formGraphics.DrawLine(redPen, 0, 0, 200, 200)
+        '    End Using
+
+
+    End Sub
+
+    Private Shared Sub DrawSomeLines(e As PaintEventArgs)
+        With e.Graphics
+            '.DrawLine()
+            .DrawLine(New Pen(Color.Red), 0, 0, 200, 200)
+
+            Brush
+            .DrawLine(New Pen(Color.))
+        End With
     End Sub
 
     Private Sub DrawBezierPoint(ByVal e As PaintEventArgs)
@@ -38,8 +60,8 @@
 
         ' Create points for curve.
         Dim start As New Point(100, 100)
-        Dim control1 As New Point(pt, 10)
-        Dim control2 As New Point(350, 50)
+        Dim control1 As New Point(CInt(TextBox1.Text), 10)
+        Dim control2 As New Point(CInt(TextBox2.Text), 50)
         Dim [end] As New Point(500, 100)
 
         ' Draw arc to screen.
