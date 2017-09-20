@@ -3,6 +3,8 @@
 
     Dim PaintCounter As Integer
 
+    'Dim ArtificialPaintEventArgse As PaintEventArgs
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PaintCounter = 0
@@ -24,11 +26,12 @@
         'BeginContainerVoid(e)
         'FillPieRectangle(e)
 
-        'DrawBezierPoint(e)
+        DrawBezierPoint(e)
+
+        'If (ArtificialPaintEventArgse )
 
 
-
-        DrawSomeLines(e)
+        'DrawSomeLines(e)
 
 
         '    e.Graphics.Using redPen As New Pen(Color.Red), _
@@ -44,8 +47,8 @@
             '.DrawLine()
             .DrawLine(New Pen(Color.Red), 0, 0, 200, 200)
 
-            Brush
-            .DrawLine(New Pen(Color.))
+
+
         End With
     End Sub
 
@@ -60,8 +63,8 @@
 
         ' Create points for curve.
         Dim start As New Point(100, 100)
-        Dim control1 As New Point(CInt(TextBox1.Text), 10)
-        Dim control2 As New Point(CInt(TextBox2.Text), 50)
+        Dim control1 As New Point(CInt(NumericUpDown1.Text), CInt(NumericUpDown3.Text))
+        Dim control2 As New Point(CInt(NumericUpDown2.Text), CInt(NumericUpDown4.Text))
         Dim [end] As New Point(500, 100)
 
         ' Draw arc to screen.
@@ -140,4 +143,24 @@
         e.Graphics.FillPie(redBrush, rect, startAngle, sweepAngle)
     End Sub
 
+    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
+        Me.InvokePaint(Me, New PaintEventArgs(Me.CreateGraphics(), Me.Bounds))
+
+        'Form1_Paint(sender,)
+
+        'RaiseEvent Form1().paint  
+    End Sub
+
+    Private Sub NumericUpDown2_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown2.ValueChanged
+        Me.InvokePaint(Me, New PaintEventArgs(Me.CreateGraphics(), Me.Bounds))
+
+    End Sub
+
+    Private Sub NumericUpDown3_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown3.ValueChanged
+        Me.InvokePaint(Me, New PaintEventArgs(Me.CreateGraphics(), Me.Bounds))
+    End Sub
+
+    Private Sub NumericUpDown4_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown4.ValueChanged
+        Me.InvokePaint(Me, New PaintEventArgs(Me.CreateGraphics(), Me.Bounds))
+    End Sub
 End Class
